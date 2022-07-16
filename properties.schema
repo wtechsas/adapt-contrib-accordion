@@ -1,0 +1,143 @@
+{
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "id": "http://jsonschema.net",
+  "$ref": "http://localhost/plugins/content/component/model.schema",
+  "globals": {
+    "ariaRegion": {
+      "type": "string",
+      "required": true,
+      "title": "Etiqueta de Aria",
+      "default": "Lista de secciones ampliables. Seleccione cada botón para expandir el contenido.",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    }
+  },
+  "properties": {
+    "_supportedLayout": {
+      "type": "string",
+      "required": true,
+      "enum": ["full-width", "half-width", "both"],
+      "default": "full-width",
+      "editorOnly": true
+    },
+    "instruction": {
+      "type": "string",
+      "required": false,
+      "default": "",
+      "title": "Texto de instrucciones",
+      "inputType": "Text",
+      "validators": [],
+      "help": "Este es el texto de las instrucciones.",
+      "translatable": true
+    },
+    "_setCompletionOn": {
+      "type": "string",
+      "required": false,
+      "default": "allItems",
+      "title": "Establecer su finalización en:",
+      "enum": ["inview", "allItems"],
+      "inputType": {
+        "type": "Select",
+        "options": [{"val": "inview", "label": "ver el componente"}, {"val": "allItems", "label": "todos los elementos"}]
+      },
+      "validators": [],
+      "help": "Si la finalización se basa en que el alumno haya visto todos los elementos de acordeón, o simplemente haya visto el componente."
+    },
+    "_items": {
+      "type": "array",
+      "required": true,
+      "title": "Elementos del acordeón",
+      "items": {
+        "type": "object",
+        "required": true,
+        "properties": {
+          "title": {
+            "type": "string",
+            "required": true,
+            "inputType": "Text",
+            "title": "Título del elemento",
+            "default": "",
+            "validators": ["required"],
+            "help": "Este es el titúlo del botón desplegable",
+            "translatable": true
+          },
+          "body": {
+            "type": "string",
+            "required": true,
+            "inputType": "TextArea",
+            "title": "Contenido del elemento desplegado",
+            "default": "",
+            "validators": ["required"],
+            "help": "Este es el texto del contenido del elemento que está oculto hasta que se hace clic en el título del elemento",
+            "translatable": true
+          },
+          "_graphic": {
+            "type": "object",
+            "required": false,
+            "title": "Imagen",
+            "properties": {
+              "alt": {
+                "type": "string",
+                "required": false,
+                "default": "",
+                "title": "Texto alternativo de la imagen",
+                "inputType": "Text",
+                "validators": [],
+                "help": "Una descripción de la imagen; requerido cuando tiene un significado que debe transmitirse al alumno. Para imágenes 'decorativas', déjelo en blanco.",
+                "translatable": true
+              },
+              "src": {
+                "type": "string",
+                "required": false,
+                "default": "",
+                "title": "Recurso",
+                "inputType": "Asset:image",
+                "validators": [],
+                "help": "Imagen opcional que se representará junto al contenido desplegable del elemento"
+              },
+              "attribution": {
+                "type":"string",
+                "required": false,
+                "default": "",
+                "title": "Descripción de la imagen",
+                "inputType": "Text",
+                "validators": [],
+                "help": "Texto que se mostrará superpuesta a la parte inferior de la imagen",
+                "translatable": true
+              }
+            }
+          },
+          "_classes": {
+            "type": "string",
+            "required": false,
+            "default": "",
+            "title": "Incluir clases",
+            "inputType": "Text",
+            "validators": [],
+            "help": "Clases personalizadas que se aplican al elemento de acordeón. Las clases admitidas 'align-image-left' y 'align-image-right' están disponibles para alinear la imagen del elemento a la izquierda o a la derecha en la vista de escritorio. En pantallas más pequeñas, la imagen del elemento está predeterminada debajo del texto del cuerpo del elemento. Se pueden usar clases adicionales, pero deben estar predefinidas en uno de los archivos Less. Separe varias clases con un espacio."
+          }
+        }
+      }
+    },
+    "_shouldCollapseItems": {
+      "type": "boolean",
+      "required": false,
+      "default": true,
+      "title": "Los elementos deben contraerse automáticamente",
+      "inputType": "Checkbox",
+      "validators": [],
+      "help": "Si está deshabilitado, al expandir un elemento de acordeón, los elementos expandidos anteriormente no se colapsarán"
+    },
+    "_shouldExpandFirstItem": {
+      "type": "boolean",
+      "required": false,
+      "default": false,
+      "title": "El primer elemento debe expandirse",
+      "inputType": "Checkbox",
+      "validators": [],
+      "help": "Si está habilitado, el primer elemento se expandirá de forma predeterminada"
+    }
+  }
+}

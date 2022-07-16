@@ -1,0 +1,17 @@
+{
+  "name": "adapt-contrib-accordion",
+  "version": "10.0.0",
+  "framework": ">=5.19.1",
+  "homepage": "https://github.com/wtechsas/adapt-contrib-accordion",
+  "bugs": "https://github.com/wtechsas/adapt-contrib-accordion/issues",
+  "component" : "accordion",
+  "targetAttribute": "_accordion",
+  "displayName" : "Acordeón",
+  "description": "Un acordeón es un componente que muestra títulos en los que se puede hacer clic, revelando un texto para su visualización",
+  "main": "/js/adapt-contrib-accordion.js",
+  "keywords": [
+    "adapt-plugin",
+    "adapt-component"
+  ],
+  "license": "GPL-3.0"
+}
