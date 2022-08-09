@@ -43,7 +43,7 @@
         "options": [{"val": "inview", "label": "ver el componente"}, {"val": "allItems", "label": "todos los elementos"}]
       },
       "validators": [],
-      "help": "Si la finalización se basa en que el alumno haya visto todos los elementos de acordeón, o simplemente haya visto el componente."
+      "help": "Si la finalización se basa en que el estudiante haya visto todos los elementos de acordeón, o simplemente haya visto el componente."
     },
     "_items": {
       "type": "array",
@@ -85,7 +85,7 @@
                 "title": "Texto alternativo de la imagen",
                 "inputType": "Text",
                 "validators": [],
-                "help": "Una descripción de la imagen; requerido cuando tiene un significado que debe transmitirse al alumno. Para imágenes 'decorativas', déjelo en blanco.",
+                "help": "Una descripción de la imagen; requerido cuando tiene un significado que debe transmitirse al estudiante|. Para imágenes 'decorativas', déjelo en blanco.",
                 "translatable": true
               },
               "src": {
